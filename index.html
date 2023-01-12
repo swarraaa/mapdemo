@@ -10,13 +10,13 @@
     <h1>
         hello
     </h1>
-    <div class="map"></div>
+    <div id="map"></div>
     <script>
-      const watchId = navigator.geolocation.watchPosition((position) => {
+        navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
         // Show a map centered at latitude / longitude.
+        map.innerHTML='<iframe width="700px" height = "300px" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>'
       });
-      map.innerHTML='<iframe width="700px" height = "300px" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;output=embed"></iframe>'
     </script>
   </body>
 </html>
